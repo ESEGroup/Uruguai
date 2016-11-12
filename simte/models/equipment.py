@@ -36,6 +36,7 @@ class Equipment(models.Model):
     def __unicode__(self):
         return "{}: {}".format(self.eq_type, self.serial_number)
 
+
 class Piece(models.Model):
     """
     Equipment's piece

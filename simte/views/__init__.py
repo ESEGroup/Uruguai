@@ -1,4 +1,6 @@
 """
 Views
 """
-from .hello import HelloView #noqa
+
+from .hello import HelloView
+from .equipment import EquipmentListView, EquipmentEditView

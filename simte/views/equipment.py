@@ -1,0 +1,32 @@
+"""
+Equipments view
+"""
+
+import logging
+
+from django.views.generic.list import ListView
+from django.views.generic.edit import FormView
+from django.urls import reverse
+from simte.models import Equipment, Piece
+from simte.forms import EquipmentForm
+
+logger = logging.getLogger(__name__)
+
+
+class EquipmentListView(ListView):
+    """
+    View listing equipments
+    """
+
+    template_name = ''
+    model = Equipment
+
+
+class EquipmentEditView(FormView):
+    """
+    Create/Edit listing equipments
+    """
+
+    template_name = ''
+    form_class = EquipmentForm
+    success_url = reverse('')
