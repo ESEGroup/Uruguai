@@ -29,4 +29,4 @@ class EquipmentEditView(FormView):
 
     template_name = ''
     form_class = EquipmentForm
-    success_url = reverse('')
+    #success_url = reverse('index') # TODO: fix this bug

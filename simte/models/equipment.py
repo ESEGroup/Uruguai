@@ -16,13 +16,13 @@ class Equipment(models.Model):
     """
 
     STATUS_CHOICES = (
-        ('av', _('Available')),
-        ('na', _('Not Available'))
+        ('AV', _('Available')),
+        ('NA', _('Not Available'))
     )
 
     status = models.CharField(max_length=2,
                               choices=STATUS_CHOICES,
-                              default='av',
+                              default='AV',
                               verbose_name=_('Status'))
     eq_type = models.CharField(max_length=256,
                                blank=True,
