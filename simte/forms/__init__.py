@@ -2,4 +2,4 @@
 Forms
 """
 
-from .equipment import EquipmentForm
+from .equipment import EquipmentForm, PieceFormSet
