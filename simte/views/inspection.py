@@ -1,5 +1,5 @@
 """
-Equipments views
+Inspection views
 """
 
 import logging
@@ -7,26 +7,26 @@ import logging
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
 from django.urls import reverse
-from simte.models import Equipment, Piece
-from simte.forms import EquipmentForm
+from simte.models import Inspection
+from simte.forms import InspectionForm
 
 logger = logging.getLogger(__name__)
 
 
-class EquipmentListView(ListView):
+class InspectionListView(ListView):
     """
     View listing equipments
     """
 
     template_name = ''
-    model = Equipment
+    model = Inspection
 
 
-class EquipmentEditView(FormView):
+class InspectionEditView(FormView):
     """
     Create/Edit listing equipments
     """
 
     template_name = ''
-    form_class = EquipmentForm
+    form_class = InspectionForm
     #success_url = reverse('index') # TODO: fix this bug

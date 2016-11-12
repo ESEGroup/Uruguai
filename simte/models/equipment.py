@@ -42,7 +42,8 @@ class Piece(models.Model):
     Equipment's piece
     """
 
-    equipment = models.ForeignKey('Equipment')
+    equipment = models.ForeignKey('Equipment',
+                                  verbose_name=_('Equipment'))
 
     pc_type = models.CharField(max_length=256,
                                blank=True,

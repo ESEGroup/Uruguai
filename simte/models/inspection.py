@@ -5,6 +5,7 @@ Inspection model
 import logging
 
 from django.db import models
+from django.core.exceptions import ValidationError
 from django.utils.translation import ugettext_lazy as _
 
 logger = logging.getLogger(__name__)
@@ -31,13 +32,13 @@ class Inspection(models.Model):
                                default='P',
                                verbose_name=_('Type'))
 
-    equipment = models.ForeignKey('Equipment')
+    equipment = models.ForeignKey('Equipment',
+                                  verbose_name=_('Equipment'))
 
-    def save(self, *args, **kwargs):
+    def clean(self, *args, **kwargs):
         if self.end_date and self.start_date > self.end_date:
-            raise ValueError("Start date greater than end date.")
-        super(Inspection, self).save(*args, **kwargs)
-
+            raise ValidationError(_("Start date greater than end date."))
+        super(Inspection, self).clean(*args, **kwargs)
 
     def __unicode__(self):
         return "{} ({})".format(self.equipment, self.in_type)
