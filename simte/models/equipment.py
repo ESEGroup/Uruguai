@@ -23,6 +23,14 @@ class Equipment(models.Model):
                               choices=STATUS_CHOICES,
                               default='av',
                               verbose_name=_('Status'))
+    eq_type = models.CharField(max_length=256,
+                               null=True,
+                               blank=True,
+                               verbose_name=_('Type'))
+    serial_number = models.CharField(max_length=256,
+                                     null=True,
+                                     blank=True,
+                                     verbose_name=_('Serial Number'))
 
 class Piece(models.Model):
     """
@@ -30,3 +38,13 @@ class Piece(models.Model):
     """
 
     equipment = models.ForeignKey('Equipment')
+
+    pc_type = models.CharField(max_length=256,
+                               null=True,
+                               blank=True,
+                               verbose_name=_('Type'))
+
+    serial_number = models.CharField(max_length=256,
+                                     null=True,
+                                     blank=True,
+                                     verbose_name=_('Serial Number'))
