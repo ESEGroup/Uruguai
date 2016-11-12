@@ -33,5 +33,11 @@ class Inspection(models.Model):
 
     equipment = models.ForeignKey('Equipment')
 
+    def save(self, *args, **kwargs):
+        if self.end_date and self.start_date > self.end_date:
+            raise ValueError("Start date greater than end date.")
+        super(Inspection, self).save(*args, **kwargs)
+
+
     def __unicode__(self):
         return "{} ({})".format(self.equipment, self.in_type)
