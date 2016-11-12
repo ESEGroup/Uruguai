@@ -1,5 +1,6 @@
 # Uruguai
-SIMPE - Sistema Integrado de Manutenção Preventiva de Equipamentos  
+SIMPE - Sistema Integrado de Manutenção Preventiva
+
 Projeto do grupo Uruguai
 
 
