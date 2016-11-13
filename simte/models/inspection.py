@@ -39,7 +39,7 @@ class Inspection(models.Model):
         if self.end_date and self.start_date > self.end_date:
             raise ValidationError(_("Start date greater than end date."))
 
-        if not self.equipment.is_available(self.start_date, self.end_date):
+        if not self.equipment.is_available(self.start_date, self.end_date, excluding_inspection=self):
             raise ValidationError(_("Equipment is not available in this date range."))
 
         super(Inspection, self).clean(*args, **kwargs)
