@@ -17,7 +17,7 @@ class EquipmentForm(ModelForm):
 
     class Meta:
         model = Equipment
-        fields = ['status', 'eq_type', 'serial_number']
+        fields = ['eq_type', 'serial_number']
 
 class PieceForm(ModelForm):
     """
