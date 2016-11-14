@@ -18,7 +18,7 @@ class InspectionListView(ListView):
     View listing equipments
     """
 
-    template_name = ''
+    template_name = 'simte/inspection_list.html'
     model = Inspection
 
 
@@ -27,6 +27,6 @@ class InspectionEditView(FormView):
     Create/Edit listing equipments
     """
 
-    template_name = ''
+    template_name = 'simte/inspection.html'
     form_class = InspectionForm
     #success_url = reverse('index') # TODO: fix this bug

@@ -18,7 +18,7 @@ class EquipmentListView(ListView):
     View listing equipments
     """
 
-    template_name = ''
+    template_name = 'equipment_list.html'
     model = Equipment
 
 
@@ -27,6 +27,6 @@ class EquipmentEditView(FormView):
     Create/Edit listing equipments
     """
 
-    template_name = ''
+    template_name = 'equipment.html'
     form_class = EquipmentForm
     #success_url = reverse('index') # TODO: fix this bug
