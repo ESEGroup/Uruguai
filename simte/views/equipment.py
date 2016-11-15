@@ -6,7 +6,7 @@ import logging
 
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
-from django.urls import reverse
+from django.urls import reverse_lazy
 from simte.models import Equipment, Piece
 from simte.forms import EquipmentForm
 
@@ -29,4 +29,4 @@ class EquipmentEditView(FormView):
 
     template_name = 'equipment.html'
     form_class = EquipmentForm
-    #success_url = reverse('index') # TODO: fix this bug
+    success_url = reverse_lazy('equipment_list')

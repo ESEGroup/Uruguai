@@ -7,15 +7,16 @@
             {% block title %}Sistema de Inspenção Preventiva de Equipamentos{% endblock %}
         </title>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static "simte/css/base.css" %}">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         {% render_block css postprocessor "compressor.contrib.sekizai.compress" %}
         {% block css %}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="{% static "simte/css/base.css" %}">
         {% endblock %}
 
         {% block js %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         {% endblock %}
     </head>
     <body>
@@ -35,17 +36,13 @@
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Vistoria e Manutenções <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Equipamentos</a></li>
+                        <li class="active"><a href="{% url 'inspection_list' %}">Vistoria e Manutenções <span class="sr-only">(current)</span></a></li>
+                        <li><a href="{% url 'equipment_list' %}">Equipamentos</a></li>
                         <li><a href="#">Gerenciar Contas</a></li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav> <!-- barra de navegação-->
-
-        <div id="topImg">
-            <img src="{% static "simte/media/topBar.jpg" %}" style="width:100%">
-        </div>
 
         <div class="container" id="content">
             {% block content %}

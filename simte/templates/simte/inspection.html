@@ -1,0 +1,20 @@
+{% extends "simte/base.html" %}
+{% load sekizai_tags i18n bootstrap3 %}
+
+{% block content %}
+{% addtoblock js %}
+    <script>
+        console.log('test');
+    </script>
+    {{form.media}}
+{% endaddtoblock %}
+<form action="{% url 'inspection' %}" method="post" class="form">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            submit
+        </button>
+    {% endbuttons %}
+</form>
+{% endblock %}
