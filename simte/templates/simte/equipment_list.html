@@ -1,0 +1,38 @@
+{% extends "simte/base.html" %}
+{% load sekizai_tags i18n %}
+
+{% block content %}
+    {% addtoblock css %}
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    {% endaddtoblock %}
+    {% addtoblock js %}
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#equipment_table').DataTable();
+            });
+        </script>
+    {% endaddtoblock %}
+
+    <div class="col-md-12">
+        <h1>{% trans 'Equipment' %}</h1>
+        <table id="equipment_table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>{% trans "Edit" %}</th>
+                    <th>{% trans "Type" %}</th>
+                    <th>{% trans "Serial Number" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in object_list %}
+                <tr>
+                    <td><a href="{% url 'equipment' object.id %}"><i class="fa fa-pencil"></i></td>
+                    <td>{{ object.eq_type }}</td>
+                    <td>{{ object.serial_number }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

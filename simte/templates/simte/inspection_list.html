@@ -1,0 +1,49 @@
+{% extends "simte/base.html" %}
+{% load sekizai_tags i18n %}
+
+{% block content %}
+    {% addtoblock css %}
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+    {% endaddtoblock %}
+    {% addtoblock js %}
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#inspection_table').DataTable();
+            });
+        </script>
+    {% endaddtoblock %}
+
+    <div class="col-md-12">
+        <h1>{% trans 'Inspections' %}</h1>
+        <table id="inspection_table" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>{% trans "Edit" %}</th>
+                    <th>{% trans "Equipment" %}</th>
+                    <th>{% trans "Type" %}</th>
+                    <th>{% trans "Start Date" %}</th>
+                    <th>{% trans "End Date" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in object_list %}
+                <tr>
+                    <td><a href="{% url 'inspection' object.id %}"><i class="fa fa-pencil"></i></td>
+                    <td><a href="{% url 'equipment' object.equipment.id %}">{{ object.equipment }}</a></td>
+                    {% if object.in_type == 'P' %}
+                        <td>{% trans "Preventive" %}</td>
+                    {% elif object.in_type == 'F' %}
+                        <td>{% trans "Fix" %}</td>
+                    {% else %}
+                        <td></td>
+                    {% endif %}
+
+                    <td>{{ object.start_date }}</td>
+                    <td>{{ object.end_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

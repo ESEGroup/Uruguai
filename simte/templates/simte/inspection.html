@@ -1,0 +1,15 @@
+{% extends "simte/base.html" %}
+{% load sekizai_tags i18n bootstrap3 %}
+
+{% block content %}
+<form action="{% url 'inspection' form.instance.id %}" method="post" class="form">
+    <legend>{% trans 'Inspection Update' %}</legend>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            submit
+        </button>
+    {% endbuttons %}
+</form>
+{% endblock %}

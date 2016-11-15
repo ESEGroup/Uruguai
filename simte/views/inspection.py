@@ -5,10 +5,11 @@ Inspection views
 import logging
 
 from django.views.generic.list import ListView
-from django.views.generic.edit import FormView
-from django.urls import reverse
+from django.views.generic.edit import UpdateView, CreateView
+from django.urls import reverse_lazy
 from simte.models import Inspection
 from simte.forms import InspectionForm
+from datetimewidget.widgets import DateTimeWidget
 
 logger = logging.getLogger(__name__)
 
@@ -18,15 +19,27 @@ class InspectionListView(ListView):
     View listing equipments
     """
 
-    template_name = ''
+    template_name = 'simte/inspection_list.html'
     model = Inspection
 
 
-class InspectionEditView(FormView):
+class InspectionEditView(UpdateView):
     """
-    Create/Edit listing equipments
+    Edit equipments
     """
 
-    template_name = ''
-    form_class = InspectionForm
-    #success_url = reverse('index') # TODO: fix this bug
+    template_name = 'simte/inspection.html'
+    model = Inspection
+    fields = ['start_date', 'end_date', 'in_type', 'equipment']
+    success_url = reverse_lazy('inspection_list')
+
+
+class InspectionCreateView(CreateView):
+    """
+    Create equipments
+    """
+
+    template_name = 'simte/inspection_add.html'
+    model = Inspection
+    fields = ['start_date', 'end_date', 'in_type', 'equipment']
+    success_url = reverse_lazy('inspection_list')
