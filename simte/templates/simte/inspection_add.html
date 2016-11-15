@@ -8,7 +8,7 @@
     </script>
     {{form.media}}
 {% endaddtoblock %}
-<form action="{% url 'inspection' %}" method="post" class="form">
+<form action="{% url 'inspection_add' %}" method="post" class="form">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}
