@@ -3,8 +3,7 @@
 
 {% block content %}
 
-<form action="{% url 'equipment' form.instance.id %}" method="post" class="form">
-    <legend>{% trans 'Equipment Update' %}</legend>
+<form action="{% url 'equipment_add' %}" method="post" class="form">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}

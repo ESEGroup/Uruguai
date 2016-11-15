@@ -2,13 +2,8 @@
 {% load sekizai_tags i18n bootstrap3 %}
 
 {% block content %}
-{% addtoblock js %}
-    <script>
-        console.log('test');
-    </script>
-    {{form.media}}
-{% endaddtoblock %}
-<form action="{% url 'inspection' %}" method="post" class="form">
+<form action="{% url 'inspection' form.instance.id %}" method="post" class="form">
+    <legend>{% trans 'Inspection Update' %}</legend>
     {% csrf_token %}
     {% bootstrap_form form %}
     {% buttons %}

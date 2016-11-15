@@ -3,5 +3,5 @@ Views
 """
 
 from .hello import HelloView
-from .equipment import EquipmentListView, EquipmentEditView
-from .inspection import InspectionListView, InspectionEditView
+from .equipment import EquipmentListView, EquipmentEditView, EquipmentCreateView
+from .inspection import InspectionListView, InspectionEditView, InspectionCreateView
