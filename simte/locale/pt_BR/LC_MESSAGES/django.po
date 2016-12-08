@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-15 20:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: simte/models/equipment.py:21 simte/models/equipment.py:91
+#: simte/models/inspection.py:33 simte/templates/simte/equipment_list.html:23
+#: simte/templates/simte/inspection_list.html:24
+msgid "Type"
+msgstr ""
+
+#: simte/models/equipment.py:25 simte/models/equipment.py:96
+#: simte/templates/simte/equipment_list.html:24
+msgid "Serial Number"
+msgstr "Número de Série"
+
+#: simte/models/equipment.py:86 simte/models/inspection.py:36
+#: simte/templates/simte/equipment_list.html:18
+#: simte/templates/simte/inspection_list.html:23
+msgid "Equipment"
+msgstr "Equipamento"
+
+#: simte/models/inspection.py:20 simte/templates/simte/inspection_list.html:35
+msgid "Preventive"
+msgstr "Preventivo"
+
+#: simte/models/inspection.py:21 simte/templates/simte/inspection_list.html:37
+msgid "Fix"
+msgstr "Conserto"
+
+#: simte/models/inspection.py:24 simte/templates/simte/inspection_list.html:25
+msgid "Start Date"
+msgstr "Data Inicial"
+
+#: simte/models/inspection.py:28 simte/templates/simte/inspection_list.html:26
+msgid "End Date"
+msgstr "Data Final"
+
+#: simte/models/inspection.py:40
+msgid "Start date greater than end date."
+msgstr "Data inicial maior que data final."
+
+#: simte/models/inspection.py:43
+msgid "Equipment is not available in this date range."
+msgstr "O Equipamento não está disponivel nas datas requeridas"
+
+#: simte/templates/simte/equipment.html:7
+msgid "Equipment Update"
+msgstr "Update de Equipamento"
+
+#: simte/templates/simte/equipment_list.html:22
+#: simte/templates/simte/inspection_list.html:22
+msgid "Edit"
+msgstr "Editar"
+
+#: simte/templates/simte/inspection.html:6
+msgid "Inspection Update"
+msgstr "Update de Vistoria"
+
+#: simte/templates/simte/inspection_list.html:18
+msgid "Inspections"
+msgstr "Vistoria"
