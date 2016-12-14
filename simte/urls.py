@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'equipment_list/$', views.EquipmentListView.as_view(), name="equipment_list"),
     url(r'equipment/(?P<pk>[0-9]+)/$', views.EquipmentEditView.as_view(), name="equipment"),
     url(r'equipment/add/$', views.EquipmentCreateView.as_view(), name="equipment_add"),
+    url(r'login/$',views.LoginView, name = "login"),
 ]
