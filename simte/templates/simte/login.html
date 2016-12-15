@@ -1,0 +1,40 @@
+{% load sekizai_tags i18n staticfiles %}
+<html>
+    <head>
+        <title>
+            {% block title %}Sistema de Inspenção Preventiva de Equipamentos{% endblock %}
+        </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{% static "simte/css/login.css" %}">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        {% render_block css postprocessor "compressor.contrib.sekizai.compress" %}
+        {% block css %}
+        {% endblock %}
+
+        {% block js %}
+        {% endblock %}
+    </head>
+    <body>
+        <br><br><br>
+        <class="login-page">
+            <div class="form">
+                <form class="register-form">
+                    <input type="text" placeholder="name"/>
+                    <input type="password" placeholder="password"/>
+                    <input type="text" placeholder="email address"/>
+                    <button>create</button>
+                    <p class="message">Já Cadastrado? <a href="#">Entrar</a></p>
+                 </form>
+                 <form class="login-form">
+                    <input type="text" placeholder="username"/>
+                    <input type="password" placeholder="password"/>
+                    <button>login</button>
+                    <p class="message">Não Cadastrado? <a href="#">Cadastrar</a></p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
