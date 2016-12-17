@@ -50,7 +50,7 @@ class Manager(Profession):
     """
 
     department = models.ForeignKey('Department',
-                                   verbose_name=_('Equipment'))
+                                   verbose_name=_('Department'))
 
     def __unicode__(self):
         return "Manager {}".format(self.user.username)
@@ -61,7 +61,7 @@ def Technician(Profession):
     Technician
     """
     department = models.ForeignKey('Department',
-                                   verbose_name=_('Equipment'))
+                                   verbose_name=_('Department'))
 
     def __unicode__(self):
         return "Tech {}".format(self.user.username)

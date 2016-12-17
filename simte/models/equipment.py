@@ -23,6 +23,10 @@ class Equipment(models.Model):
                                      null=True,
                                      blank=True,
                                      verbose_name=_('Serial Number'))
+    department = models.ForeignKey('Department',
+                                   null=True,
+                                   blank=True,
+                                   verbose_name=_('Department'))
 
     def occupied_dates(self, excluding_inspection=None):
         """

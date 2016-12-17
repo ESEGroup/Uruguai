@@ -35,6 +35,11 @@ class Inspection(models.Model):
     equipment = models.ForeignKey('Equipment',
                                   verbose_name=_('Equipment'))
 
+    description = models.TextField(max_length=2048,
+                              blank=True,
+                              null=True,
+                              verbose_name=_('Description'))
+
     def clean(self, *args, **kwargs):
         if self.end_date and self.start_date > self.end_date:
             raise ValidationError(_("Start date greater than end date."))
