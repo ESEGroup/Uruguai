@@ -56,7 +56,7 @@ class Manager(Profession):
         return "Manager {}".format(self.user.username)
 
 
-def Technician(Profession):
+class Technician(Profession):
     """
     Technician
     """

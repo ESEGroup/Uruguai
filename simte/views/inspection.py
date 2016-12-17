@@ -30,7 +30,7 @@ class InspectionEditView(UpdateView):
 
     template_name = 'simte/inspection.html'
     model = Inspection
-    fields = ['start_date', 'end_date', 'in_type', 'equipment']
+    fields = ['start_date', 'end_date', 'in_type', 'equipment', 'description', 'assigned_to']
     success_url = reverse_lazy('inspection_list')
 
 
@@ -41,5 +41,5 @@ class InspectionCreateView(CreateView):
 
     template_name = 'simte/inspection_add.html'
     model = Inspection
-    fields = ['start_date', 'end_date', 'in_type', 'equipment']
+    fields = ['start_date', 'end_date', 'in_type', 'equipment', 'description', 'assigned_to']
     success_url = reverse_lazy('inspection_list')

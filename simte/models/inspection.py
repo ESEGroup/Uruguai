@@ -40,6 +40,11 @@ class Inspection(models.Model):
                               null=True,
                               verbose_name=_('Description'))
 
+    assigned_to = models.ForeignKey('Technician',
+                                  blank=True,
+                                  null=True,
+                                  verbose_name=_('Assigned to'))
+
     def clean(self, *args, **kwargs):
         if self.end_date and self.start_date > self.end_date:
             raise ValidationError(_("Start date greater than end date."))

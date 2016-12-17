@@ -29,7 +29,7 @@ class EquipmentEditView(UpdateView):
 
     template_name = 'simte/equipment.html'
     model = Equipment
-    fields = ['eq_type', 'serial_number']
+    fields = ['eq_type', 'serial_number', 'department']
     success_url = reverse_lazy('equipment_list')
 
     def get_context_data(self, **kwargs):
@@ -44,5 +44,5 @@ class EquipmentCreateView(CreateView):
 
     template_name = 'simte/equipment_add.html'
     model = Equipment
-    fields = ['eq_type', 'serial_number']
+    fields = ['eq_type', 'serial_number', 'department']
     success_url = reverse_lazy('equipment_list')
