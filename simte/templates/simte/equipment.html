@@ -13,4 +13,31 @@
         </button>
     {% endbuttons %}
 </form>
+<div>
+    <h3>
+        {% trans 'Occupied Dates' %}
+    </h3>
+    <table class="table">
+        <thead>
+            <th>
+                {% trans 'Start Date' %}
+            </th>
+            <th>
+                {% trans 'End Date' %}
+            </th>
+        </thead>
+        <tbody>
+        {% for dates in occupied_dates %}
+            <tr>
+                <td>
+                    {{dates.0}}
+                </td>
+                <td>
+                    {{dates.1}}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    <table>
+</div>
 {% endblock %}

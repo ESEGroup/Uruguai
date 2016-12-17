@@ -32,6 +32,11 @@ class EquipmentEditView(UpdateView):
     fields = ['eq_type', 'serial_number']
     success_url = reverse_lazy('equipment_list')
 
+    def get_context_data(self, **kwargs):
+        context = super(EquipmentEditView, self).get_context_data(**kwargs)
+        context['occupied_dates'] = self.object.occupied_dates
+        return context
+
 class EquipmentCreateView(CreateView):
     """
     Create equipments
