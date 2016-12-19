@@ -6,14 +6,16 @@ import logging
 
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView, CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from simte.models import Equipment, Piece
 from simte.forms import EquipmentForm
+from simte.shortcuts import get_user_equips
 
 logger = logging.getLogger(__name__)
 
 
-class EquipmentListView(ListView):
+class EquipmentListView(LoginRequiredMixin, ListView):
     """
     View listing equipments
     """
@@ -21,8 +23,12 @@ class EquipmentListView(ListView):
     template_name = 'simte/equipment_list.html'
     model = Equipment
 
+    def get_queryset(self, *args, **kwargs):
+        user = self.request.user
+        return get_user_equips(user)
 
-class EquipmentEditView(UpdateView):
+
+class EquipmentEditView(LoginRequiredMixin, UpdateView):
     """
     Edit equipments
     """
@@ -37,7 +43,7 @@ class EquipmentEditView(UpdateView):
         context['occupied_dates'] = self.object.occupied_dates
         return context
 
-class EquipmentCreateView(CreateView):
+class EquipmentCreateView(LoginRequiredMixin, CreateView):
     """
     Create equipments
     """

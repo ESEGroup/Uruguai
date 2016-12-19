@@ -9,7 +9,7 @@ from . import views
 logger = logging.getLogger(__name__)
 
 urlpatterns = [
-    url(r'^$', views.HelloView.as_view(), name="index"),
+    url(r'^$', views.IndexView.as_view(), name="index"),
     url(r'inspection_list/$', views.InspectionListView.as_view(), name="inspection_list"),
     url(r'inspection/(?P<pk>[0-9]+)/$', views.InspectionEditView.as_view(), name="inspection"),
     url(r'inspection/add/$', views.InspectionCreateView.as_view(), name="inspection_add"),

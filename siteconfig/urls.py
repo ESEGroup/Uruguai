@@ -8,7 +8,7 @@ import django.contrib.auth.urls as auth_urls
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'', include(auth_urls)),
+    url(r'^accounts/', include(auth_urls)),
     url(r'', include('simte.urls')),
 ]
 
