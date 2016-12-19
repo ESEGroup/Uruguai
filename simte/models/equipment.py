@@ -15,6 +15,11 @@ class Equipment(models.Model):
     Equipment
     """
 
+    STATUS_CHOICES = (
+        ('A', _('Available')),
+        ('U', _('Unavailable'))
+    )
+
     eq_type = models.CharField(max_length=256,
                                blank=True,
                                null=True,
@@ -27,6 +32,10 @@ class Equipment(models.Model):
                                    null=True,
                                    blank=True,
                                    verbose_name=_('Department'))
+    status = models.CharField(max_length=1,
+                              choices=STATUS_CHOICES,
+                              default='A',
+                              verbose_name=_('Status'))
 
     def occupied_dates(self, excluding_inspection=None):
         """

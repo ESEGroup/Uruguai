@@ -20,6 +20,7 @@
             <thead>
                 <tr>
                     <th>{% trans "Edit" %}</th>
+                    <th>{% trans "Departament" %}</th>
                     <th>{% trans "Type" %}</th>
                     <th>{% trans "Serial Number" %}</th>
                 </tr>
@@ -28,6 +29,7 @@
                 {% for object in object_list %}
                 <tr>
                     <td><a href="{% url 'equipment' object.id %}"><i class="fa fa-pencil"></i></td>
+                    <td>{{ object.department }}</td>
                     <td>{{ object.eq_type }}</td>
                     <td>{{ object.serial_number }}</td>
                 </tr>

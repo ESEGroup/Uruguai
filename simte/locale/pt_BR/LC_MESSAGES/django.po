@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 21:38+0000\n"
+"POT-Creation-Date: 2016-12-19 22:38+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,22 +18,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: simte/models/equipment.py:21 simte/models/equipment.py:95
+#: simte/models/equipment.py:19
+msgid "Available"
+msgstr "Disponível"
+
+#: simte/models/equipment.py:20
+msgid "Unavailable"
+msgstr "Indisponível"
+
+#: simte/models/equipment.py:26 simte/models/equipment.py:104
 #: simte/models/inspection.py:33 simte/templates/simte/equipment_list.html:23
 #: simte/templates/simte/inspection_list.html:24
 msgid "Type"
 msgstr "Tipo"
 
-#: simte/models/equipment.py:25 simte/models/equipment.py:100
+#: simte/models/equipment.py:30 simte/models/equipment.py:109
 #: simte/templates/simte/equipment_list.html:24
 msgid "Serial Number"
 msgstr "Número de Série"
 
-#: simte/models/equipment.py:29 simte/models/user.py:53 simte/models/user.py:64
+#: simte/models/equipment.py:34 simte/models/user.py:53 simte/models/user.py:64
 msgid "Department"
 msgstr "Departamento"
 
-#: simte/models/equipment.py:90 simte/models/inspection.py:36
+#: simte/models/equipment.py:38
+msgid "Status"
+msgstr ""
+
+#: simte/models/equipment.py:99 simte/models/inspection.py:36
 #: simte/templates/simte/equipment_list.html:18
 #: simte/templates/simte/inspection_list.html:23
 msgid "Equipment"
