@@ -4,15 +4,18 @@ Inspection signals
 
 import json
 import requests
+import logging
 
 from django.conf import settings
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from simte.models import Inspection
 
+logger = logging.getLogger(__name__)
 
 @receiver(post_save, sender=Inspection)
 def reserve_equip(sender, instance, created, **kwargs):
+    return None
 
     equip_id = instance.equipment.id
     start_date = instance.equipment.start_date
@@ -30,6 +33,7 @@ def reserve_equip(sender, instance, created, **kwargs):
             }
         }
 
+        logger.debug("Desagendando {}: {}".format(equip_id, start_date.isoformat()))
         requests.post(url=url, headers=headers, data=json.dumps(data))
 
     headers = {'content-type': 'application/json'}
@@ -53,4 +57,5 @@ def reserve_equip(sender, instance, created, **kwargs):
             "utilizavel": False
         }
 
+    logger.debug("Agendando {}: {}".format(equip_id, start_date.isoformat()))
     requests.post(url=url, headers=headers, data=json.dumps(data))
