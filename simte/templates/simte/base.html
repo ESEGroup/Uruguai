@@ -42,7 +42,59 @@
                         <li><a href="{% url 'equipment_add' %}">Novo Equipamento</a></li>
                         <li><a href="#">Gerenciar Contas</a></li>
                     </ul>
+
+                    {% if not user.is_anonymous %}
+                    <ul class="nav navbar-nav navbar-right" style="margin-right:15px;">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" href="#">
+                                <i class="fa fa-user"></i>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                {% if user.administrator %}
+                                <li>
+                                    <a href="">
+                                        {% trans "Administrator" %}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% if user.manager %}
+                                <li>
+                                    <a href="">
+                                        {% trans "Manager" %}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        {{ user.manager.department }}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                {% if user.technician %}
+                                <li>
+                                    <a href="">
+                                        {% trans "Technician" %}
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="">
+                                        {{ user.technician.department }}
+                                    </a>
+                                </li>
+                                {% endif %}
+                                <li role="separator" class="divider"></li>
+                                <li>
+                                    <a href="{% url 'logout' %}">
+                                        <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                        {% trans "Logout" %}
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    {% endif %}
                 </div><!-- /.navbar-collapse -->
+
             </div><!-- /.container-fluid -->
         </nav> <!-- barra de navegação-->
 

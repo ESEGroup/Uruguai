@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 22:38+0000\n"
+"POT-Creation-Date: 2016-12-19 23:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,13 +27,13 @@ msgid "Unavailable"
 msgstr "Indisponível"
 
 #: simte/models/equipment.py:26 simte/models/equipment.py:104
-#: simte/models/inspection.py:33 simte/templates/simte/equipment_list.html:23
+#: simte/models/inspection.py:33 simte/templates/simte/equipment_list.html:24
 #: simte/templates/simte/inspection_list.html:24
 msgid "Type"
 msgstr "Tipo"
 
 #: simte/models/equipment.py:30 simte/models/equipment.py:109
-#: simte/templates/simte/equipment_list.html:24
+#: simte/templates/simte/equipment_list.html:25
 msgid "Serial Number"
 msgstr "Número de Série"
 
@@ -89,6 +89,22 @@ msgstr "O Equipamento não está disponivel nas datas requeridas"
 msgid "Name"
 msgstr "Nome"
 
+#: simte/templates/simte/base.html:57
+msgid "Administrator"
+msgstr "Administrador"
+
+#: simte/templates/simte/base.html:64
+msgid "Manager"
+msgstr "Gerente"
+
+#: simte/templates/simte/base.html:76
+msgid "Technician"
+msgstr "Técnico"
+
+#: simte/templates/simte/base.html:89
+msgid "Logout"
+msgstr ""
+
 #: simte/templates/simte/equipment.html:7
 msgid "Equipment Update"
 msgstr "Update de Equipamento"
@@ -101,6 +117,12 @@ msgstr "Datas Ocupadas"
 #: simte/templates/simte/inspection_list.html:22
 msgid "Edit"
 msgstr "Editar"
+
+#: simte/templates/simte/equipment_list.html:23
+#, fuzzy
+#| msgid "Department"
+msgid "Departament"
+msgstr "Departamento"
 
 #: simte/templates/simte/inspection.html:6
 msgid "Inspection Update"
