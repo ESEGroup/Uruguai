@@ -20,12 +20,13 @@ def get_reserved_dates(equip):
 
     try:
         response = requests.get(url=url, params=auth_param, headers=headers)
+        logger.debug(response)
+        data = response.json()
+        logger.debug(data)
     except Exception as e:
         logger.error(e)
-        return None
+        return []
 
-    data = response.json()
-    logger.debug(data)
 
     occupied = []
 

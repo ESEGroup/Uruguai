@@ -57,6 +57,8 @@ class Equipment(models.Model):
         result = []
         for inspec in inspections:
             result.append((inspec.start_date, inspec.end_date))
+
+        result += get_reserved_dates(self)
         return result
 
 
