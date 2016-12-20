@@ -37,10 +37,14 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="{% url 'inspection_list' %}">Vistoria e Manutenções</a></li>
-                        <li><a href="{% url 'inspection_add' %}">Nova Vistoria</a></li>
+                        {% if user.administrator or user.manager %}
+                            <li><a href="{% url 'inspection_add' %}">Nova Vistoria</a></li>
+                        {% endif %}
                         <li><a href="{% url 'equipment_list' %}">Equipamentos</a></li>
-                        <li><a href="{% url 'equipment_add' %}">Novo Equipamento</a></li>
-                        <li><a href="#">Gerenciar Contas</a></li>
+                        {% if user.administrator %}
+                            <li><a href="{% url 'equipment_add' %}">Novo Equipamento</a></li>
+                            <li><a href="#">Gerenciar Contas</a></li>
+                        {% endif %}
                     </ul>
 
                     {% if not user.is_anonymous %}
