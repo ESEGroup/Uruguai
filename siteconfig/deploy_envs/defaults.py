@@ -252,5 +252,10 @@ INTERNAL_IPS = '127.0.0.1'
 # Integration           #
 #########################
 
-AGENDAMENTO_URL = "http://127.0.0.1:5000"
-AGENDAMENTO_TOKEN = ""
+AGENDAMENTO_URL = "http://127.0.0.1:5000/"
+AGENDAMENTO_AUTH_ID = "7"
+AGENDAMENTO_TOKEN = "019j3elkda"
+AGENDAMENTO_PARAM = {
+    "authId": AGENDAMENTO_AUTH_ID,
+    "authToken": AGENDAMENTO_TOKEN
+}

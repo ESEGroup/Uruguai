@@ -7,23 +7,30 @@ import requests
 import logging
 
 from django.conf import settings
+from django.utils.dateparse import parse_datetime
 
 logger = logging.getLogger(__name__)
 
 def get_reserved_dates(equip):
-    return None
 
     headers = {'content-type': 'application/json'}
+    auth_param = getattr(settings, 'AGENDAMENTO_PARAM', None)
     url = getattr(settings, 'AGENDAMENTO_URL', None)
-    url += "/recursos/{}/agendamentos".format(equip.id)
+    url += "api/recursos/{}".format(equip.id)
 
     try:
-        response = requests.get(url=url, headers=headers)
+        response = requests.get(url=url, params=auth_param, headers=headers)
     except Exception as e:
         logger.error(e)
         return None
 
-    data = json.load(response.json())
-    periodos = data["agendamento"]["periodo"]
-    occupied = [(periodo['inicio'], periodo['fim']) for periodo in periodos]
+    data = response.json()
+    logger.debug(data)
+
+    occupied = []
+
+    agendamentos = data["recurso"]["agendamentos"]
+    for agendamento in agendamentos:
+        occupied += [(parse_datetime(agendamento['intervalo']['inicio']), parse_datetime(agendamento['intervalo']['fim']))]
+
     return occupied

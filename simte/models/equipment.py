@@ -7,6 +7,8 @@ import logging
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from simte.helpers import get_reserved_dates
+
 logger = logging.getLogger(__name__)
 
 
