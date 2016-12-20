@@ -30,6 +30,17 @@ class InspectionListView(LoginRequiredMixin, ListView):
         return Inspection.objects.filter(equipment__in=equips)
 
 
+class InspectionDetailView(LoginRequiredMixin, UpdateView):
+    """
+    Edit equipments
+    """
+
+    template_name = 'simte/inspection_detail.html'
+    model = Inspection
+    fields = ['start_date', 'end_date', 'in_type', 'equipment', 'description', 'assigned_to']
+    success_url = reverse_lazy('inspection_list')
+
+
 class InspectionEditView(LoginRequiredMixin, UpdateView):
     """
     Edit equipments

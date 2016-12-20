@@ -19,7 +19,7 @@
         <table id="equipment_table" class="table table-striped">
             <thead>
                 <tr>
-                    <th>{% trans "Edit" %}</th>
+                    <th>{% trans "Actions" %}</th>
                     <th>{% trans "Departament" %}</th>
                     <th>{% trans "Type" %}</th>
                     <th>{% trans "Serial Number" %}</th>
@@ -28,7 +28,12 @@
             <tbody>
                 {% for object in object_list %}
                 <tr>
-                    <td><a href="{% url 'equipment' object.id %}"><i class="fa fa-pencil"></i></td>
+                    <td>
+                        <a href="{% url 'equipment_detail' object.id %}"><i class="fa fa-eye"></i></a>
+                        {% if user.administrator %}
+                        <a href="{% url 'equipment' object.id %}"><i class="fa fa-pencil"></i></a>
+                        {% endif %}
+                    </td>
                     <td>{{ object.department }}</td>
                     <td>{{ object.eq_type }}</td>
                     <td>{{ object.serial_number }}</td>

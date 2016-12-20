@@ -12,8 +12,10 @@ urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name="index"),
     url(r'inspection_list/$', views.InspectionListView.as_view(), name="inspection_list"),
     url(r'inspection/(?P<pk>[0-9]+)/$', views.InspectionEditView.as_view(), name="inspection"),
+    url(r'inspection_detail/(?P<pk>[0-9]+)/$', views.InspectionDetailView.as_view(), name="inspection_detail"),
     url(r'inspection/add/$', views.InspectionCreateView.as_view(), name="inspection_add"),
     url(r'equipment_list/$', views.EquipmentListView.as_view(), name="equipment_list"),
     url(r'equipment/(?P<pk>[0-9]+)/$', views.EquipmentEditView.as_view(), name="equipment"),
+    url(r'equipment_detail/(?P<pk>[0-9]+)/$', views.EquipmentDetailView.as_view(), name="equipment_detail"),
     url(r'equipment/add/$', views.EquipmentCreateView.as_view(), name="equipment_add"),
 ]

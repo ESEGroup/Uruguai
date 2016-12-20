@@ -19,7 +19,7 @@
         <table id="inspection_table" class="table table-striped">
             <thead>
                 <tr>
-                    <th>{% trans "Edit" %}</th>
+                    <th>{% trans "Actions" %}</th>
                     <th>{% trans "Equipment" %}</th>
                     <th>{% trans "Type" %}</th>
                     <th>{% trans "Start Date" %}</th>
@@ -29,8 +29,13 @@
             <tbody>
                 {% for object in object_list %}
                 <tr>
-                    <td><a href="{% url 'inspection' object.id %}"><i class="fa fa-pencil"></i></td>
-                    <td><a href="{% url 'equipment' object.equipment.id %}">{{ object.equipment }}</a></td>
+                    <td>
+                        <a href="{% url 'inspection_detail' object.id %}"><i class="fa fa-eye"></i></a>
+                        {% if user.administrator or user.manager %}
+                        <a href="{% url 'inspection' object.id %}"><i class="fa fa-pencil"></i></a>
+                        {% endif %}
+                    </td>
+                    <td><a href="{% url 'equipment_detail' object.equipment.id %}">{{ object.equipment }}</a></td>
                     {% if object.in_type == 'P' %}
                         <td>{% trans "Preventive" %}</td>
                     {% elif object.in_type == 'F' %}
